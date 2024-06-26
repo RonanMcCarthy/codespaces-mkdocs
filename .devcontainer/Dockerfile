@@ -1,8 +1,11 @@
 # Use the specified base image
 FROM python:3.12-slim-bookworm
 
-# Set the working directory
+# Set the working directory to the root of the repository
 WORKDIR /workspace
+
+# Copy the content of the repository to the working directory
+COPY . /workspace
 
 # Install MkDocs and required plugins
 RUN pip install mkdocs mkdocs-material mkdocs-glightbox
