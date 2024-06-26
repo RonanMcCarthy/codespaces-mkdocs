@@ -1,0 +1,8 @@
+{
+  "name": "MkDocs Development Container",
+  "dockerFile": ".devcontainer/Dockerfile",
+  "appPort": [ "8000:8000" ],
+  "extensions": [
+    "ms-python.python"
+  ]
+}
