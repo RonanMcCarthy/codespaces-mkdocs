@@ -1,8 +1,8 @@
 {
     "name": "MkDocs Development Container",
     "dockerFile": "Dockerfile",
-    "appPort": [
-        "8000:8000"
+    "forwardPorts": [
+        8000
     ],
     "customizations": {
         "vscode": {
