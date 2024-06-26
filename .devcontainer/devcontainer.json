@@ -1,15 +1,23 @@
 {
-    "name": "MkDocs Development Container",
-    "dockerFile": "Dockerfile",
-    "forwardPorts": [
-        8000
-    ],
-    "postCreateCommand": "mkdocs serve --dev-addr=0.0.0.0:8000",
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "ms-python.python"
-            ]
-        }
+  "name": "MkDocs Development Container",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "forwardPorts": [
+    8000
+  ],
+  "postAttachCommand": "mkdocs serve --dev-addr=0.0.0.0:8000",
+  "waitFor": "onCreateCommand",
+  "updateContentCommand": "python3 -m pip install -r requirements.txt",
+  "portsAttributes": {
+    "8000": {
+      "label": "Docs Preview",
+      "onAutoForward": "openPreview"
     }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python"
+      ]
+    }
+  }
 }
