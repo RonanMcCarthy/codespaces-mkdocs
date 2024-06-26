@@ -15,6 +15,3 @@ RUN pip install mkdocs mkdocs-material mkdocs-glightbox
 
 # Expose the port MkDocs will run on
 EXPOSE 8000
-
-# Set the default command to serve the MkDocs site
-CMD ["mkdocs", "serve", "--dev-addr=0.0.0.0:8000"]
